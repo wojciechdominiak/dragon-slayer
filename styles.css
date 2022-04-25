@@ -1,0 +1,121 @@
+:root {
+  --clr-background: #f9f4f4;
+  --clr-primary-1: #19033f;
+  --clr-box-shadow: rgba(0, 0, 0, 0.26);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Jost", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--clr-background);
+}
+
+header {
+  box-shadow: 0 2px 8px var(--clr-box-shadow);
+  padding: 1rem;
+  background-color: var(--clr-primary-1);
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+section {
+  width: 90%;
+  max-width: 40rem;
+  margin: auto;
+}
+
+.container {
+  text-align: center;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  box-shadow: 0 2px 8px var(--clr-box-shadow);
+  border-radius: 20px;
+}
+
+.healthbar {
+  width: 90%;
+  height: 45px;
+  border: 2px solid #575757;
+  margin: 1rem auto;
+  background: #fde5e5;
+}
+
+.healthbar__value {
+  background-color: #00a876;
+  width: 100%;
+  height: 100%;
+}
+
+#monster h2,
+#player h2 {
+  margin: 0.5rem;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  font: inherit;
+  border: 1px solid var(--clr-primary-1);
+  background-color: var(--clr-primary-1);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin: 1rem;
+  width: 12rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px var(--clr-box-shadow);
+}
+
+button:hover,
+button:active {
+  background-color: #af0a78;
+  border-color: #af0a78;
+  box-shadow: 1px 1px 8px var(--clr-box-shadow);
+}
+
+button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  box-shadow: none;
+  color: #3f3f3f;
+}
+
+#log ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#log li {
+  margin: 0.5rem 0;
+}
+
+.log--player {
+  color: #4f0e9a;
+}
+
+.log--monster {
+  color: #da8d00;
+}
+
+.log--damage {
+  color: red;
+}
+
+.log--heal {
+  color: green;
+}
