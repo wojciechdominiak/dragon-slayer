@@ -9,3 +9,5 @@ Special attack and healing are only active in some rounds.
 The dragon always strikes back.
 
 You have to choose the right tactics and kill the dragon to save your kingdom!
+
+Live demo: https://wojciechdominiak.github.io/dragon-slayer/
