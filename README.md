@@ -4,7 +4,9 @@ The goal is to kill the dragon.
 
 The player can perform an attack, a special attack, and heal.
 
-Special attack and healing are only active in some rounds.
+Special attack is available if player have enough mana.
+
+Heal is available if player have potions.
 
 The dragon always strikes back.
 
@@ -16,4 +18,4 @@ https://wojciechdominiak.github.io/dragon-slayer/
 
 ## Stack
 
-HTML5, CSS3, JavaScript, Vue.js 3.0 
+HTML5, CSS3, JavaScript, Vue.js 3.0
