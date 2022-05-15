@@ -1,4 +1,4 @@
-Dragon Slayer - a simple browser game.
+# Dragon Slayer
 
 The goal is to kill the dragon.
 
@@ -10,6 +10,10 @@ The dragon always strikes back.
 
 You have to choose the right tactics and kill the dragon to save your kingdom!
 
-Live demo: https://wojciechdominiak.github.io/dragon-slayer/
+## Live demo
 
-Stack: HTML5, CSS3, JavaScript, Vue.js
+https://wojciechdominiak.github.io/dragon-slayer/
+
+## Stack
+
+HTML5, CSS3, JavaScript, Vue.js 3.0 
