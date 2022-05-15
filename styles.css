@@ -34,7 +34,7 @@ section {
 
 .container {
   text-align: center;
-  padding: 1.5rem;
+  padding: .8rem;
   margin: 1rem auto;
   box-shadow: 0 2px 8px var(--clr-box-shadow);
   border-radius: 20px;
@@ -44,7 +44,7 @@ section {
   width: 90%;
   height: 45px;
   border: 2px solid #575757;
-  margin: 1rem auto;
+  margin: .5rem auto;
   background: #fde5e5;
 }
 
@@ -71,6 +71,7 @@ section {
 #monster h2,
 #player h2 {
   margin: 0.5rem;
+  font-size: 1.2rem
 }
 
 #controls {
@@ -83,13 +84,14 @@ section {
 
 button {
   font: inherit;
+  font-size: 0.8rem;
   border: 1px solid var(--clr-primary-1);
   background-color: var(--clr-primary-1);
   color: white;
-  padding: 1rem 2rem;
+  padding: .5rem .3rem;
   border-radius: 12px;
-  margin: 1rem;
-  width: 12rem;
+  margin: .5rem;
+  width: 9rem;
   cursor: pointer;
   box-shadow: 1px 1px 4px var(--clr-box-shadow);
 }

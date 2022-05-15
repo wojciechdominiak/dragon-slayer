@@ -74,7 +74,7 @@ const app = Vue.createApp({
       this.addLogMessage("player", "attack", attackValue);
     },
     attackPlayer() {
-      const attackValue = getRandomValue(14, 6);
+      const attackValue = getRandomValue(13, 6);
       this.playerHealth -= attackValue;
       this.addLogMessage("monster", "attack", attackValue);
     },
