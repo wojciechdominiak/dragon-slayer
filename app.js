@@ -6,6 +6,7 @@ const app = Vue.createApp({
   data() {
     return {
       playerHealth: 100,
+      playerMana: 100,
       monsterHealth: 100,
       currentRound: 0,
       winner: null,
@@ -42,8 +43,14 @@ const app = Vue.createApp({
       }
       return { width: this.playerHealth + "%" };
     },
+    playerManaStyles() {
+      if (this.playerMana < 0) {
+        return { width: "0%" };
+      }
+      return { width: this.playerMana + "%" };
+    },
     mayUseSpecialAttack() {
-      return this.currentRound % getRandomValue(6, 2) !== 0;
+      return this.playerMana <= 0;
     },
     mayUseHeal() {
       return this.potions === 0;
@@ -53,6 +60,7 @@ const app = Vue.createApp({
     startGame() {
       this.logMessages = [];
       this.playerHealth = 100;
+      this.playerMana = 100;
       this.monsterHealth = 100;
       this.currentRound = 1;
       this.winner = null;
@@ -60,19 +68,20 @@ const app = Vue.createApp({
     },
     attackMonster() {
       this.currentRound++;
-      const attackValue = getRandomValue(12, 5);
+      const attackValue = getRandomValue(10, 4);
       this.monsterHealth -= attackValue;
       this.attackPlayer();
       this.addLogMessage("player", "attack", attackValue);
     },
     attackPlayer() {
-      const attackValue = getRandomValue(15, 8);
+      const attackValue = getRandomValue(14, 6);
       this.playerHealth -= attackValue;
       this.addLogMessage("monster", "attack", attackValue);
     },
     specialAttackMonster() {
       this.currentRound++;
-      const attackValue = getRandomValue(20, 10);
+      this.playerMana -= getRandomValue(22, 18);
+      const attackValue = getRandomValue(14, 8);
       this.monsterHealth -= attackValue;
       this.attackPlayer();
       this.addLogMessage("player", "special-attack", attackValue);
@@ -80,7 +89,7 @@ const app = Vue.createApp({
     healPlayer() {
       this.potions--;
       this.currentRound++;
-      const healValue = getRandomValue(20, 16);
+      const healValue = getRandomValue(14, 12);
       if (this.playerHealth + healValue > 100) {
         this.playerHealth = 100;
       } else {
