@@ -59,7 +59,7 @@
               <span
                 :class="{'log--player':logMessage.actionBy ==='player', 'log--monster':logMessage.actionBy ==='monster'}"
                 >{{logMessage.actionBy === 'player' ? 'Player ' :
-                'Dragon'}}</span
+                'Dragon '}}</span
               >
               <span v-if="logMessage.actionType==='heal'"
                 >heals himself for
