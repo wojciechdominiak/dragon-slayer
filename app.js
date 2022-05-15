@@ -10,6 +10,7 @@ const app = Vue.createApp({
       currentRound: 0,
       winner: null,
       logMessages: [],
+      potions: 3,
     };
   },
   watch: {
@@ -45,7 +46,7 @@ const app = Vue.createApp({
       return this.currentRound % getRandomValue(6, 2) !== 0;
     },
     mayUseHeal() {
-      return this.currentRound % getRandomValue(6, 2) !== 0;
+      return this.potions === 0;
     },
   },
   methods: {
@@ -55,6 +56,7 @@ const app = Vue.createApp({
       this.monsterHealth = 100;
       this.currentRound = 1;
       this.winner = null;
+      this.potions = 3;
     },
     attackMonster() {
       this.currentRound++;
@@ -76,8 +78,9 @@ const app = Vue.createApp({
       this.addLogMessage("player", "special-attack", attackValue);
     },
     healPlayer() {
+      this.potions--;
       this.currentRound++;
-      const healValue = getRandomValue(20, 12);
+      const healValue = getRandomValue(20, 16);
       if (this.playerHealth + healValue > 100) {
         this.playerHealth = 100;
       } else {
