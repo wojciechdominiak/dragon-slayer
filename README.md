@@ -4,9 +4,9 @@ The goal is to kill the dragon.
 
 The player can perform an attack, a special attack, and heal.
 
-Special attack is available if player has enough mana.
+Special attack is available if the player has enough mana.
 
-Heal is available if player has potions.
+Heal is available if the player has potions.
 
 The dragon always strikes back.
 
