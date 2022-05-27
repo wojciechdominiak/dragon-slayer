@@ -78,7 +78,7 @@ const app = Vue.createApp({
       this.potions = 3;
       this.difficultyLevel = 0.4;
     },
-
+    
     restartGame() {
       this.logMessages = [];
       this.playerHealth = 100;
@@ -91,50 +91,35 @@ const app = Vue.createApp({
 
     attackMonster() {
       this.currentRound++;
-      const attackValue = getRandomValue(
-        10 - this.difficultyLevel,
-        4 - this.difficultyLevel
-      );
+      const attackValue = getRandomValue(10-this.difficultyLevel, 4-this.difficultyLevel);
       this.monsterHealth -= attackValue;
       this.attackPlayer();
-      this.addLogMessage("player", "attack", attackValue * 10);
+      this.addLogMessage("player", "attack", attackValue*10);
     },
     attackPlayer() {
-      const attackValue = getRandomValue(
-        14 + this.difficultyLevel,
-        6 + this.difficultyLevel
-      );
+      const attackValue = getRandomValue(14+this.difficultyLevel, 6+this.difficultyLevel);
       this.playerHealth -= attackValue;
-      this.addLogMessage("monster", "attack", attackValue * 10);
+      this.addLogMessage("monster", "attack", attackValue*10);
     },
     specialAttackMonster() {
       this.currentRound++;
-      this.playerMana -= getRandomValue(
-        22 + this.difficultyLevel,
-        18 + this.difficultyLevel
-      );
-      const attackValue = getRandomValue(
-        14 - this.difficultyLevel,
-        8 - this.difficultyLevel
-      );
+      this.playerMana -= getRandomValue(22+this.difficultyLevel, 18+this.difficultyLevel);
+      const attackValue = getRandomValue(14-this.difficultyLevel, 8-this.difficultyLevel);
       this.monsterHealth -= attackValue;
       this.attackPlayer();
-      this.addLogMessage("player", "special-attack", attackValue * 10);
+      this.addLogMessage("player", "special-attack", attackValue*10);
     },
     healPlayer() {
       this.potions--;
       this.currentRound++;
-      const healValue = getRandomValue(
-        15 + this.difficultyLevel,
-        14 + this.difficultyLevel
-      );
+      const healValue = getRandomValue(15+this.difficultyLevel, 14+this.difficultyLevel);
       if (this.playerHealth + healValue > 100) {
         this.playerHealth = 100;
       } else {
         this.playerHealth += healValue;
       }
       this.attackPlayer();
-      this.addLogMessage("player", "heal", healValue * 10);
+      this.addLogMessage("player", "heal", healValue*10);
     },
     addLogMessage(who, what, value) {
       this.logMessages.unshift({
