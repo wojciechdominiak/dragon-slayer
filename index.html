@@ -42,7 +42,7 @@
           <h3 v-if="winner==='Monster'">You lost!</h3>
           <h3 v-else-if="winner==='Player'">You Won!</h3>
           <h3 v-else="winner==='Draw'">It's a draw!</h3>
-          <button @click="startGame">New game</button>
+          <button @click="restartGame">New game</button>
         </section>
         <section id="controls" v-else>
           <button @click="attackMonster">ATTACK</button>
@@ -79,10 +79,12 @@
           Your kingdom has been attacked by a dragon. Now you must do your duty
           and save your homeland. But be careful the dragon is very agile. We
           will give you healing potions. Also remember that to perform a special
-          attack you need to have a lot of strength! We believe in you that you
-          will save us!
+          attack you need to have a lot of strength! We believe that you will
+          save us!<br />
+          <h3>Choose the difficulty level:</h3>
         </p>
-        <button @click="startGame">Start battle!</button>
+        <button @click="startGameEasy">Easy</button>
+        <button @click="startGameHard">Hard</button>
       </section>
     </div>
   </body>
